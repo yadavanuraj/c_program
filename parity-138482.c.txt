@@ -1,0 +1,31 @@
+
+#include <stdio.h>
+#include<string.h>
+
+unsigned char    ComputeEvenParity(unsigned char   val){
+    char temp;
+    
+    val=val<<1;
+    
+    temp = val ^ (val >> 1); 
+    temp = temp ^ (temp >> 2); 
+    temp = temp ^ (temp >> 4); 
+    temp = temp ^ (temp >> 8);
+    
+    if(temp&1==1)
+    printf("odd Parity");
+else printf("even Parity");
+}
+
+
+
+int main()
+{ char input;
+
+    printf("enter input");
+    scanf("%c",&input);
+    
+    ComputeEvenParity(input);
+    
+    return 0;
+}
