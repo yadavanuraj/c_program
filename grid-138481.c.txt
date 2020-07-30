@@ -1,0 +1,43 @@
+/*
+emp ID 138481
+emp UserID anuryada*/
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[10], out_str[10][10];
+    int i,j, len;
+    
+  printf("enter string:");
+ scanf("%[^\n]%*c", str);
+  
+  
+  len=strlen(str); // string lenght
+  
+     printf("\n lenght of string is %d", len);
+     
+     printf("\n%s\n",str);
+     
+     for(i=1;i<len-1;i++){
+         
+         for(j=0;j<len;j++){
+             if(j==0)
+                 printf("%c",str[i]);
+             else if(j==len-1)
+             printf("%c",str[len-1-i]);
+             else
+             printf(" ");
+            
+          }
+        
+         printf("\n");
+     }
+     
+     for(i=len-1;i>=0;i--)
+     printf("%c",str[i]);
+     
+
+    return 0;
+}

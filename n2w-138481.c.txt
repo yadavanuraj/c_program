@@ -1,0 +1,83 @@
+/*
+emp ID 138481
+emp UserID anuryada*/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+ void Num2Words(int num)
+ {
+     int NoD,i,j,temp, k=1;
+
+     
+      NoD = (num == 0) ? 1  : (log10(num) + 1); // num of digits
+      NoD--;
+    
+ for(NoD;NoD>=0;NoD--){
+         
+    if(NoD==0)
+    temp=num;
+         
+    else{
+           
+        for(j=NoD;j>0;j--)  
+        k=k*10;
+        
+        temp=num/(k);
+        num=num%(k);
+        k=1; }
+        
+       // printf("%d\t",temp);
+     //   printf("%d\n",num);
+   
+        
+        switch(temp) {
+      case 1 :
+     
+         printf("ONE " );
+         break;
+      case 2 :
+    
+         printf("TWO " );
+         break;
+         case 3 :
+   
+         printf("THREE " );
+         break;
+         case 4 :
+         printf("FOUR " );
+         break;
+         case 5 :
+         printf("FIVE " );
+         break;
+         case 6 :
+         printf("SIX " );
+         break;
+         case 7 :
+         printf("SEVEN " );
+         break;
+         case 8 :
+         printf("EIGHT " );
+         break;
+         case 9 :
+         printf("NINE " );
+         break;
+      default :
+         printf("ZERO   " );
+       
+        
+     }
+ }
+ }
+ 
+int main()
+{
+    int i ;
+    
+    printf("ener number:");
+    scanf("%d",&i);
+    
+    Num2Words(i);
+    
+}

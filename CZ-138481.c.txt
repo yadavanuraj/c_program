@@ -1,0 +1,45 @@
+/*
+emp ID 138481
+emp UserID anuryada*/
+
+
+#include <stdio.h> 
+
+ int CountZeroBits(unsigned char n) {
+    
+    unsigned int  count0 = 0, count1 = 0, temp ; 
+    
+    //calculating count of zeros
+        while (n) 
+                  { 
+                     if(n % 2 == 0){
+                     count0++;
+                     }
+                    else {
+                         count1++;
+                                     }
+                         n /= 2;
+                    } 
+   
+     temp=count0 + count1;
+    
+     while(temp < 8){
+     temp++;
+     count0++;
+     }
+  
+    return (count0); 
+}
+
+/* Program to test function CountZeroBits */
+int main() 
+{ 
+    int i=25 ; //provide input
+	
+ printf("provide input");
+schanf("%d",&i)
+
+	printf("%d", CountZeroBits(i)); 
+	return 0; 
+
+} 

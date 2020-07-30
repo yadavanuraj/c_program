@@ -1,0 +1,27 @@
+/*
+emp ID 138481
+emp UserID anuryada*/
+#include <stdio.h>
+
+GetUniqueElement(const int *ary, int count, int **outary)
+
+{
+int count_ary, base=0, index=0;
+outary=(int*)malloc(sizeof(int));
+
+for(count_ary = 0; count_ary<count;count_ary++)
+{
+if(ary[count_ary]==ary[base])
+{continue;
+}
+else{ if(count_ary-1>base)
+base=count_ary;
+else
+{
+index++;
+outary=(int*)realloc(outary, index*sizeof(int));
+outary[index-1]=ary[count-ary-1];
+}
+}
+}
+}

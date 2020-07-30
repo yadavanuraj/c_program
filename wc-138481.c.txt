@@ -1,0 +1,47 @@
+/*
+emp ID 138481
+emp UserID anuryada*/
+
+#include<stdio.h>
+#include<stdlib.h>
+
+#define OUT    0 
+#define IN    1 
+  
+ 
+ int  word_count(char  *line)
+{ 
+    int state = OUT; 
+    unsigned wc = 0;  // word count 
+  
+    // Scan all characters one by one 
+    while (*line) 
+    { 
+        // If next character is a separator, set the  
+        // state as OUT 
+        if (*line == ' ' || *line == '\n' || *line == '\t') 
+            state = OUT; 
+  
+        // If next character is not a word separator and  
+        // state is OUT, then set the state as IN and  
+        // increment word count 
+        else if (state == OUT) 
+        { 
+            state = IN; 
+            ++wc; 
+        } 
+  
+        // Move to next character 
+        ++line; 
+    } 
+  
+    return wc; 
+} 
+  
+// Driver program to tes above functions 
+int main(void) 
+{ 
+    char line[] = "One two         three\n    four\tfive  "; 
+    printf("No of words : %d", word_count(line)); 
+    return 0; 
+}
